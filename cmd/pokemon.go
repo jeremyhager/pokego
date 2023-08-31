@@ -22,7 +22,10 @@ pokego pokemon bulbasaur
 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
-			cmd.Help()
+			err := cmd.Help()
+			if err != nil {
+				log.Fatal(err)
+			}
 			os.Exit(0)
 		}
 		poke, err := pokemon.Get(args[0])

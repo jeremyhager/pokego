@@ -21,7 +21,10 @@ pokego species 1
 pokego species bulbasaur`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
-			cmd.Help()
+			err := cmd.Help()
+			if err != nil {
+				log.Fatal(err)
+			}
 			os.Exit(0)
 		}
 
