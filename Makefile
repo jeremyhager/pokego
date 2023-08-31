@@ -6,6 +6,9 @@ GOARCH_x64=amd64
 
 default: test build
 
+release: build
+	tar -zcf 
+
 build: build-linux build-mac build-windows
 
 build-linux: clean
