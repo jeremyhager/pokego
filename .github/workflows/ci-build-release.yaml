@@ -1,4 +1,4 @@
-name: CI build
+name: Build and Release
 
 on:
   push:
@@ -17,9 +17,20 @@ jobs:
           go-version: '1.21'
       - name: Build
         run: make build
+      - name: Configure 1Password Service Account
+        uses: 1password/load-secrets-action/configure@v1
+        with:
+          service-account-token:  ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+      - name: Load GitHub credentials
+        uses: 1password/load-secrets-action@v1
+        with:
+          export-env: true
+        env:
+          GITHUB_CREDENTIAL: op://cicd/pokego/credential
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
+          token: ${{ env.GITHUB_CREDENTIAL }}
           files: |
             bin/pokego
             bin/mac/pokego
