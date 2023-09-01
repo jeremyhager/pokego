@@ -32,7 +32,7 @@ pokego pokemon bulbasaur
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("pokemon info:\n%+v\n", poke.Species)
+		fmt.Printf("pokemon info:\n%+v\n", poke.Sprites)
 	},
 }
 
