@@ -12,6 +12,7 @@ var rootCmd = &cobra.Command{
 	Short: "A simple cli tool to interact with pokeapi.",
 	Long: `Used to showcase different aspects of coding concepts while using 
 practical usecases. Ideologies and concepts include: TDD, OOP, DRY, etc.`,
+	SilenceUsage: true,
 }
 
 func Execute() {
