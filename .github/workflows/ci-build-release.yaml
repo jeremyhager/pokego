@@ -17,7 +17,7 @@ jobs:
         with:
           go-version: '1.21'
       - name: Build
-        run: make build
+        run: make release
       - name: Configure 1Password Service Account
         uses: 1password/load-secrets-action/configure@v1
         with:
@@ -33,6 +33,6 @@ jobs:
         with:
           token: ${{ env.GITHUB_CREDENTIAL }}
           files: |
-            bin/pokego
-            bin/mac/pokego
-            bin/windows/pokego.exe
+            dist/linux.gz
+            dist/mac.gz
+            dist/windows.gz

@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/jeremyhager/pokeapi/pokemonspecies"
+	"github.com/jeremyhager/pokeapi"
 	"github.com/spf13/cobra"
 )
 
@@ -28,11 +28,11 @@ pokego species bulbasaur`,
 			os.Exit(0)
 		}
 
-		species, err := pokemonspecies.Get(args[0])
+		species, err := pokeapi.GetSpecies(args[0])
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("pokemon info:\n\n%v\n", species.FlavorTextEntries[0].FlavorText)
+		fmt.Printf("pokemon species description:\n\n%v\n", species.FlavorTextEntries[0].FlavorText)
 	},
 }
 

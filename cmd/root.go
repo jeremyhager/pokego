@@ -6,12 +6,15 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// var Debug bool
+
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "pokego",
 	Short: "A simple cli tool to interact with pokeapi.",
 	Long: `Used to showcase different aspects of coding concepts while using 
 practical usecases. Ideologies and concepts include: TDD, OOP, DRY, etc.`,
+	SilenceUsage: true,
 }
 
 func Execute() {
@@ -22,6 +25,7 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 	rootCmd.CompletionOptions.DisableDefaultCmd = true
+	// rootCmd.PersistentFlags().String("language", "en", "change the output language")
+	// rootCmd.PersistentFlags().BoolVarP(&Debug, "debug", "", false, "debug output")
 }
