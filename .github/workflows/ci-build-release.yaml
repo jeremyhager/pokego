@@ -2,13 +2,29 @@
 name: Build and Release
 
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        required: true
+        type: string
+      environment:
+        default: production
+        type: environment
+      go_version:
+        default: "1.21"
+        type: string
+      # platforms:
+      #   default: "linux,macos,windows"
+      #   type: string
+      release:
+        description: "Whether to create a GitHub Release"
+        type: boolean
+        default: true
 
 jobs: 
   build-and-release:
     runs-on: ubuntu-latest
+    if: inputs.release
     steps:
       - name: Checkout
         uses: actions/checkout@v3
