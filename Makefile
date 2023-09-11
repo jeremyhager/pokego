@@ -26,6 +26,9 @@ build-mac: clean
 build-windows: clean
 	GOARCH=$(GOARCH_x64) GOOS=windows $(GO_BUILD) -o $(BIN_PATH)/windows/$(BINARY_NAME).exe
 
+build-docker:
+	docker build -t pokego .
+
 clean:
 	rm -rf $(BIN_PATH)
 	rm -rf $(RELEASE_PATH)

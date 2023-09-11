@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/jeremyhager/pokeapi/pokemon"
+	"github.com/jeremyhager/pokeapi"
 	"github.com/spf13/cobra"
 )
 
@@ -28,14 +28,15 @@ pokego pokemon bulbasaur
 			}
 			os.Exit(0)
 		}
-		poke, err := pokemon.Get(args[0])
+		poke, err := pokeapi.GetPokemon(args[0])
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("pokemon info:\n%+v\n", poke.Sprites)
+		fmt.Printf("pokemon types:\n%+v\n", poke.Types)
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(pokemonCmd)
+
 }

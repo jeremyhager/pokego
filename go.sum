@@ -1,8 +1,10 @@
 github.com/cpuguy83/go-md2man/v2 v2.0.2/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
-github.com/jeremyhager/pokeapi v0.0.0-20230831165545-da1883a17fab h1:wMu0gUXVSqRFbWDZrC4tlZkg5xulVB3HpBg/o+urtf0=
-github.com/jeremyhager/pokeapi v0.0.0-20230831165545-da1883a17fab/go.mod h1:Gq+3w6VcOa5L7k3wuk8GrPWwM8NkmPUN5wD6uHDx5B8=
+github.com/jeremyhager/pokeapi v0.2.0-alpha h1:Mvv60lIIIpPs2L2Zm4gorDFG0JmfFoO9pKp6zDJGsGs=
+github.com/jeremyhager/pokeapi v0.2.0-alpha/go.mod h1:/azwMFu8qQfK8JGP4QfpciGyN898T4nh5mIJv9AJ+Z4=
+github.com/patrickmn/go-cache v2.1.0+incompatible h1:HRMgzkcYKYpi3C8ajMPV8OFXaaRUnok+kx1WdO15EQc=
+github.com/patrickmn/go-cache v2.1.0+incompatible/go.mod h1:3Qf8kWWT7OJRJbdiICTKqZju1ZixQ/KpMGzzAfe6+WQ=
 github.com/russross/blackfriday/v2 v2.1.0/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=
 github.com/spf13/cobra v1.7.0 h1:hyqWnYt1ZQShIddO5kBpj3vu05/++x6tJ6dg8EC572I=
 github.com/spf13/cobra v1.7.0/go.mod h1:uLxZILRyS/50WlhOIKD7W6V5bgeIt+4sICxh6uRMrb0=

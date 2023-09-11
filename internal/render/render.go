@@ -1,30 +1,37 @@
-package generate
+package render
 
 import (
 	"os"
 	"path/filepath"
 	"text/template"
 
-	"github.com/jeremyhager/pokego/pkg/pokedex"
+	"github.com/jeremyhager/pokego/internal/pokemoninfo"
 )
 
-func RenderTemplate(inputFile, outputFile, id string) error {
+type RenderArgs struct {
+	ID         string
+	InputFile  string
+	OutputFile string
+	Debug      bool
+}
+
+func (r *RenderArgs) RenderTemplate() error {
 	filePath := os.Stdout
 
-	info, err := pokedex.Init(id)
+	info, err := pokemoninfo.Init(r.ID)
 	if err != nil {
 		return err
 	}
 
-	tmplFile, err := template.ParseFiles(inputFile)
+	tmplFile, err := template.ParseFiles(r.InputFile)
 	if err != nil {
 		return err
 	}
 
-	if outputFile == "" {
+	if r.OutputFile == "" {
 		filePath = os.Stdout
 	} else {
-		filePath, err = createPath(outputFile)
+		filePath, err = createPath(r.OutputFile)
 		if err != nil {
 			return err
 		}
