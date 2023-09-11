@@ -7,9 +7,9 @@ on:
       tag_name:
         required: true
         type: string
-      environment:
-        default: production
-        type: environment
+      # environment:
+      #   default: production
+      #   type: environment
       go_version:
         default: "1.21"
         type: string
