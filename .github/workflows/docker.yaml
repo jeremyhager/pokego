@@ -1,9 +1,9 @@
 name: Build docker image
 
 on:
-  push:
-    tags:
-      - 'v*'
+  release:
+    types: 
+      created
 
 permissions:
   packages: write
