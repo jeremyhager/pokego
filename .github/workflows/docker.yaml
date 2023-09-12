@@ -50,15 +50,17 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v4
         with:
-          context: ./
+          context: .
           file: ./Dockerfile
-          builder: ${{ steps.buildx.outputs.name }}
+          # builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          secrets: |
+            GIT_AUTH_TOKEN=${{ env.GITHUB_CREDENTIAL }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
