@@ -27,7 +27,7 @@ jobs:
         with:
           export-env: true
         env:
-          GITHUB_CREDENTIAL: op://cicd/pokego/credential
+          GITHUB_CREDENTIAL: op://cicd/pokego/classic
 
       - name: Set up Docker Buildx
         id: buildx
