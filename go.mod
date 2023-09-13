@@ -3,6 +3,7 @@ module github.com/jeremyhager/pokego
 go 1.21.1
 
 require (
+	github.com/MakeNowJust/heredoc v1.0.0
 	github.com/jeremyhager/pokeapi v0.2.0-alpha
 	github.com/spf13/cobra v1.7.0
 )
