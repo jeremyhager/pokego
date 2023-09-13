@@ -50,7 +50,7 @@ func NewNamedCmd() *cobra.Command {
 	cmd.Flags().BoolVarP(&opts.Next, "next", "n", false, "Get the next page of a resource")
 	cmd.Flags().BoolVarP(&opts.Previous, "previous", "p", false, "Get the previous of a resource")
 	cmd.Flags().BoolVarP(&opts.Results, "results", "r", false, "Get the results of a resource")
-	cmd.Flags().BoolVarP(&opts.raw, "raw", "", false, "Get raw json results of a resource")
+	cmd.Flags().BoolVarP(&opts.raw, "raw", "", false, "Get the raw json response of a resource")
 
 	return cmd
 }
@@ -74,8 +74,9 @@ func namedRun(opts *NamedOptions) error {
 	if opts.Previous {
 		fmt.Printf("%v\n", named.Previous)
 	}
-	if opts.Previous {
-		fmt.Printf("%v\n", named.Results)
+	if opts.Results {
+		rawResults, _ := json.Marshal(named.Results)
+		fmt.Printf("%s", rawResults)
 	}
 
 	if opts.raw {
