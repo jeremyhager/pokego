@@ -3,10 +3,11 @@ package cmd
 import (
 	"os"
 
+	"github.com/jeremyhager/pokego/internal/named"
 	"github.com/spf13/cobra"
 )
 
-// var Debug bool
+var namedCmd = named.NewNamedCmd()
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -26,6 +27,7 @@ func Execute() {
 
 func init() {
 	rootCmd.CompletionOptions.DisableDefaultCmd = true
+	rootCmd.AddCommand(namedCmd)
 	// rootCmd.PersistentFlags().String("language", "en", "change the output language")
 	// rootCmd.PersistentFlags().BoolVarP(&Debug, "debug", "", false, "debug output")
 }
