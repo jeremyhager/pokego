@@ -12,4 +12,4 @@ RUN apt update && apt install ca-certificates -y && rm -rf /var/lib/apt/lists/*
 
 # USER pokego
 
-COPY ./bin/pokego /usr/local/bin
+COPY bin/pokego /usr/local/bin
