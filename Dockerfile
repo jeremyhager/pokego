@@ -4,7 +4,7 @@ COPY . .
 RUN make build-linux
 
 
-FROM debian:latest
+FROM ubuntu:latest
 
 RUN apt update && apt install ca-certificates -y && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
