@@ -55,7 +55,7 @@ func (p *PokemonInfo) setBasePokemon(evolutions *pokeapi.EvolutionChain) (Pokemo
 		return PokemonInfo{}, err
 	}
 
-	basePokemon, err := pokeapi.GetPokemon(p.Species.Name)
+	basePokemon, err := pokeapi.GetPokemon(baseSpecies.Name)
 	// log.Printf("pokedex.Species.Name:\t%+v", pokedex.Species)
 	if err != nil {
 		return PokemonInfo{}, err

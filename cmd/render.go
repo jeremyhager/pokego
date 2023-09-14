@@ -37,8 +37,8 @@ func init() {
 	rootCmd.AddCommand(renderCmd)
 
 	renderCmd.Flags().StringVarP(&inputFile, "input", "i", "", "input file to render (required)")
-	renderCmd.Flags().StringVarP(&outputFile, "output", "o", "", "output file to create (required)")
-	renderCmd.Flags().StringVarP(&id, "id", "", "", "pokemon to base template and output on (default stdout)")
+	renderCmd.Flags().StringVarP(&outputFile, "output", "o", "", "output file to create (default stdout)")
+	renderCmd.Flags().StringVarP(&id, "id", "", "", "pokemon to base template and output on (required)")
 	renderCmd.MarkFlagRequired("id")
 	renderCmd.MarkFlagRequired("input")
 	renderCmd.MarkFlagsRequiredTogether("input", "id")
