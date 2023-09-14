@@ -13,5 +13,3 @@ WORKDIR /app
 USER pokego
 
 COPY --from=builder /app/bin/pokego /usr/local/bin
-
-ENTRYPOINT [ "/usr/local/bin/pokego" ]

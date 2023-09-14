@@ -30,8 +30,6 @@ func NewNamedCmd() *cobra.Command {
 			$ pokego named pokemon --count # get count from result
 		`),
 
-		PreRunE: cobra.ArbitraryArgs,
-
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if len(args) > 0 {
 				opts.Endpoint = args[0]
@@ -78,7 +76,6 @@ func namedRun(opts *NamedOptions) error {
 		rawResults, _ := json.Marshal(named.Results)
 		fmt.Printf("%s", rawResults)
 	}
-
 	if opts.raw {
 		rawOutput, _ := json.Marshal(named)
 		fmt.Printf("%s", rawOutput)
