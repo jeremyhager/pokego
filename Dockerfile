@@ -1,15 +1,15 @@
-FROM golang:latest AS builder
+FROM golang:latest
 WORKDIR /app
 COPY . .
 RUN make build-linux
 
 
-FROM debian:latest
+# FROM debian:latest
 
-RUN useradd -c "pokego user" pokego && mkdir /pokegohome && chown pokego:pokego /pokegohome
-RUN apt update && apt install ca-certificates -y && rm -rf /var/lib/apt/lists/*
-WORKDIR /app
+# RUN useradd -c "pokego user" pokego && mkdir /pokegohome && chown pokego:pokego /pokegohome
+# RUN apt update && apt install ca-certificates -y && rm -rf /var/lib/apt/lists/*
+# WORKDIR /app
 
-USER pokego
+# USER pokego
 
-COPY --from=builder /app/bin/pokego /usr/local/bin
+COPY /app/bin/pokego /usr/local/bin
